@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Official Shopping Hub</h1>
+    <h2>Please fill your login credentials to get access to our page</h2>
+   <form id="loginform">
+    Username:<input type="text" id="username"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    <input type="submit">
+  </form>
+
+  <script>
+    document.getElementById("loginform").addEventListener("submit",function(event){
+      event.preventDefault();
+      entereduser = document.getElementById("username").value;
+      enteredpass = document.getElementById("password").value;
+      existinguser = JSON.parse(localStorage.getItem("users")) || [];
+      var userfound=false;
+      for(i=0;i<existinguser.length;i++){
+        var user=existinguser[i];
+        if(user.username===entereduser && user.password===enteredpass){
+          userfound=true;
+          break;
+        }
+      }
+      if(userfound){
+        window.location.assign("day13js(real).html")
+      }else{alert("Invalid username or password")}
+    })
+  </script>
+</body>
+</html>
+

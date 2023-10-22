@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{list-style-type: none;text-align: center
+            ;font-size: 30px;}
+        div{text-align: center;}
+    </style>
+</head>
+<body>
+    <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  
+   <div> <img src="" alt=""></div>
+   <li></li>
+</ul>
+    <script>
+        hello123=localStorage.getItem("addingind")
+        hello123=JSON.parse(hello123)
+        lists=document.getElementsByTagName("li");
+        lists[0].innerHTML=hello123["id"];
+        lists[1].innerHTML=hello123["category"];
+        lists[2].innerHTML=hello123["description"];
+        lists[3].innerHTML=hello123["price"];
+        imgg=document.querySelector("img")
+        imgg.setAttribute("src",hello123["image"]);
+        imgg.style.width="200px"
+        imgg.style.height="200px"
+        lists[3].innerHTML=hello123["price"];
+
+        
+       
+    </script>
+</body>
+</html>
+

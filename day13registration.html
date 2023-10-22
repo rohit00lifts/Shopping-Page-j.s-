@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to official shopping hub</h1>
+    <h2>Register here</h2>
+    <form action=" " id="registrationform">
+      Username: <input type="text" id="userr" />
+      <span id="usernameerror"
+        >should contain atleast 10 characters and must start with r or s or
+        p</span
+      ><br />
+      <br />
+      Password: <input type="password" id="pass" /><span id="passworderror"
+        >please refer to the rules document for more understanding</span
+      >
+      <br />
+      <br />
+      confirm Password: <input type="password" name="" id="conpass" />
+      <span id="confirmpassword">It must be same like the above password</span>
+      <br /><br />
+      Gender: <input type="text" /><span id="gender"
+        >Only 2 genders are accepted male and female</span
+      ><br /><br />
+      Email: <input type="email" name="" id="" /><br /><br />
+      Phone: <input type="tel" id="phone" /><span id="phoneee"
+        >Must be below or equal to 10 digits</span
+      ><br /><br />
+      <input type="submit" />
+    </form>
+    <script>
+
+      document.getElementById("registrationform").addEventListener("submit",function(event){
+       event.preventDefault();
+       var userr=document.getElementById("userr").value;
+       var pass=document.getElementById("pass").value;
+       var conpass=document.getElementById("conpass").value;
+       var phonee=document.getElementById("phone").value;
+       var usernameerror=document.getElementById("usernameerror");
+      var passworderror=document.getElementById("passworderror");
+      var confirmpassword=document.getElementById("confirmpassword");
+      var phoneee=document.getElementById("phoneee");
+
+      if(userr.length<10)
+      {usernameerror.style.visibility="visible"}
+      else if(pass.length<8)
+      {passworderror.style.visibility="visible"}
+      else if(pass!==conpass)
+      {confirmpassword.style.visibility="visible"}
+      else if(phonee.length!=10)
+      {phoneee.style.visibility="visible"}
+      else{
+       var userdata={username:userr,password:pass};
+       var existingusers=JSON.parse(localStorage.getItem("users")) || [ ];
+       existingusers.push(userdata);
+       localStorage.setItem("users",JSON.stringify(existingusers))
+       window.location.assign("day13mainpage.html")};
+      })
+    </script>
+  </body>
+</html>
+
+

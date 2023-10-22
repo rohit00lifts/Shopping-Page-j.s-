@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 50px; margin: 40px;
+        }
+        button:hover{background-color: rgb(173, 173, 43);}
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Official Shopping Hub</h1>
+    <button onclick="login()">Login</button>
+    <button onclick="registration()">Register</button>
+    <script>
+        function registration(){
+           return window.location.assign("day13registration.html")
+        }
+        function login(){
+            window.location.assign("day13login.html")
+        }
+    </script>
+</body>
+
+
